@@ -1,1 +1,90 @@
-!DOCTYPE html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+  <title>Tesouro do Conhecimento</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="app">
+  <section id="menu" class="screen">
+    <div class="menu-card">
+      <div class="logo">⚔️</div>
+      <h1>TESOURO DO<br><span>CONHECIMENTO</span></h1>
+      <p>Corra. Desvie. Responda. Supere seu recorde!</p>
+      <button id="playBtn" class="primary">JOGAR</button>
+      <button id="howBtn">COMO JOGAR</button>
+      <button id="recordsBtn">RECORDES</button>
+      <button id="subjectsBtn">MATÉRIAS</button>
+    </div>
+  </section>
+
+  <section id="gameScreen" class="hidden">
+    <canvas id="gameCanvas"></canvas>
+    <div id="hud">
+      <div class="hud-item hearts" id="lives">❤️❤️❤️</div>
+      <div class="hud-item">⭐ <span id="score">0</span></div>
+      <div class="hud-item">🏆 <span id="distance">0</span> m</div>
+      <div class="hud-item">⏱️ <span id="time">00:00</span></div>
+      <div class="hud-item combo" id="combo">COMBO x0</div>
+    </div>
+    <div id="warning">⚠️ CORRA!</div>
+    <button id="pauseBtn" class="pause">Ⅱ</button>
+
+    <div id="mobileControls">
+      <button id="leftBtn">◀</button>
+      <button id="jumpBtn">▲</button>
+      <button id="rightBtn">▶</button>
+    </div>
+  </section>
+
+  <div id="questionModal" class="overlay hidden">
+    <div class="question-card">
+      <div class="question-head">
+        <span id="questionSubject">MATEMÁTICA</span>
+        <span id="questionDifficulty">FÁCIL</span>
+      </div>
+      <h2 id="questionText"></h2>
+      <div id="answers"></div>
+      <div id="questionFeedback" class="feedback"></div>
+    </div>
+  </div>
+
+  <div id="pauseModal" class="overlay hidden">
+    <div class="modal-card">
+      <h2>JOGO PAUSADO</h2>
+      <button id="resumeBtn" class="primary">CONTINUAR</button>
+      <button id="quitBtn">SAIR PARA O MENU</button>
+    </div>
+  </div>
+
+  <div id="gameOverModal" class="overlay hidden">
+    <div class="modal-card">
+      <div class="gameover">GAME OVER</div>
+      <p id="gameOverReason"></p>
+      <div class="stats">
+        <div><b id="finalScore">0</b><small>PONTOS</small></div>
+        <div><b id="finalDistance">0 m</b><small>DISTÂNCIA</small></div>
+        <div><b id="finalTime">00:00</b><small>TEMPO</small></div>
+        <div><b id="finalCorrect">0</b><small>ACERTOS</small></div>
+        <div><b id="finalCombo">x0</b><small>MAIOR COMBO</small></div>
+      </div>
+      <button id="restartBtn" class="primary">JOGAR NOVAMENTE</button>
+      <button id="menuBtn">MENU PRINCIPAL</button>
+    </div>
+  </div>
+
+  <div id="infoModal" class="overlay hidden">
+    <div class="modal-card info">
+      <button class="close" data-close>×</button>
+      <h2 id="infoTitle"></h2>
+      <div id="infoContent"></div>
+    </div>
+  </div>
+</div>
+<script src="data/questions.js"></script>
+<script src="js/game.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
